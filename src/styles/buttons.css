@@ -1,0 +1,152 @@
+/* UIverse Button Styles - Theme Aware */
+/* Adjusted for Dark and Light Modes */
+
+/* Dark Mode Button */
+[data-theme="dark"] .button,
+[data-theme="dark"] button.button {
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.36);
+  --pattern-color: rgba(46, 213, 116, 0.073);
+
+  filter: hue-rotate(0deg);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size:
+    cover,
+    15px 15px,
+    15px 15px;
+  background-position:
+    center center,
+    center center,
+    center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: background-size 0.2s ease-in-out;
+}
+
+[data-theme="dark"] .button:hover,
+[data-theme="dark"] button.button:hover {
+  background-size:
+    cover,
+    10px 10px,
+    10px 10px;
+}
+
+[data-theme="dark"] .button:active,
+[data-theme="dark"] button.button:active {
+  filter: hue-rotate(250deg);
+}
+
+/* Light Mode Button */
+[data-theme="light"] .button,
+[data-theme="light"] button.button {
+  --main-color: rgb(30, 144, 255);
+  --main-bg-color: rgba(30, 144, 255, 0.25);
+  --pattern-color: rgba(30, 144, 255, 0.08);
+
+  filter: hue-rotate(0deg);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(255, 255, 255, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size:
+    cover,
+    15px 15px,
+    15px 15px;
+  background-position:
+    center center,
+    center center,
+    center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: background-size 0.2s ease-in-out;
+}
+
+[data-theme="light"] .button:hover,
+[data-theme="light"] button.button:hover {
+  background-size:
+    cover,
+    10px 10px,
+    10px 10px;
+}
+
+[data-theme="light"] .button:active,
+[data-theme="light"] button.button:active {
+  filter: hue-rotate(250deg);
+}
+
+/* Compact Button Variant (for modals and toolbars) */
+[data-theme="dark"] .button--compact,
+[data-theme="dark"] button.button--compact {
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.2);
+  --pattern-color: rgba(46, 213, 116, 0.05);
+
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.25rem;
+}
+
+[data-theme="light"] .button--compact,
+[data-theme="light"] button.button--compact {
+  --main-color: rgb(30, 144, 255);
+  --main-bg-color: rgba(30, 144, 255, 0.15);
+  --pattern-color: rgba(30, 144, 255, 0.05);
+
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.25rem;
+}
+
+/* Primary Accent Button (for main actions) */
+[data-theme="dark"] .button--primary,
+[data-theme="dark"] button.button--primary {
+  --main-color: rgb(189, 100, 255);
+  --main-bg-color: rgba(189, 100, 255, 0.3);
+  --pattern-color: rgba(189, 100, 255, 0.08);
+
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+}
+
+[data-theme="light"] .button--primary,
+[data-theme="light"] button.button--primary {
+  --main-color: rgb(88, 86, 214);
+  --main-bg-color: rgba(88, 86, 214, 0.2);
+  --pattern-color: rgba(88, 86, 214, 0.07);
+
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+}

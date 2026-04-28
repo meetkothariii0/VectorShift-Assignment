@@ -1,0 +1,298 @@
+/* Modern Card UI - Glassmorphism with Animated Border */
+/* Supports both Dark and Light Modes */
+
+/* Dark Mode (Default) */
+[data-theme="dark"] .node-card {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(240, 15%, 9%);
+  --paragraph: hsl(0, 0%, 83%);
+  --line: hsl(240, 9%, 17%);
+  --primary: hsl(189, 92%, 58%);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 0.75rem;
+  background-color: hsla(240, 15%, 9%, 0.95);
+  background-image: radial-gradient(at 88% 40%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsl(189, 99%, 26%) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsl(189, 97%, 36%) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsl(188, 94%, 13%) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset,
+    0px 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Light Mode */
+[data-theme="light"] .node-card {
+  --white: hsl(0, 0%, 15%);
+  --black: hsl(0, 0%, 100%);
+  --paragraph: hsl(0, 0%, 40%);
+  --line: hsl(0, 0%, 85%);
+  --primary: hsl(189, 92%, 58%);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 0.75rem;
+  background-color: hsla(0, 0%, 98%, 0.95);
+  background-image: radial-gradient(at 88% 40%, hsla(0, 0%, 100%, 1) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, hsla(0, 0%, 98%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(0, 0%, 100%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsl(189, 92%, 70%) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsl(189, 90%, 75%) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsl(189, 85%, 65%) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(0, 0, 0, 0.05) inset,
+    0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .node-card::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(0deg, hsl(0, 0%, 100%) -50%, hsl(0, 0%, 40%) 100%);
+  border-radius: 1rem;
+  border: 1px solid hsl(0, 0%, 100%);
+  opacity: 0.3;
+}
+
+[data-theme="light"] .node-card::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(0deg, hsl(189, 85%, 50%) -50%, hsl(189, 90%, 70%) 100%);
+  border-radius: 1rem;
+  border: 1px solid hsl(0, 0%, 15%);
+  opacity: 0.4;
+}
+
+[data-theme="dark"] .node-card::after,
+[data-theme="light"] .node-card::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: left;
+
+  width: 200%;
+  height: 10rem;
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(189, 100%, 50%) 40%,
+    hsl(189, 100%, 50%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+
+  animation: rotate 8s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.node-card-content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.node-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid;
+  padding-bottom: 0.5rem;
+}
+
+/* Dark mode header border - White */
+[data-theme="dark"] .node-card-header {
+  border-bottom-color: hsl(0, 0%, 100%);
+}
+
+/* Light mode header border - Black */
+[data-theme="light"] .node-card-header {
+  border-bottom-color: hsl(0, 0%, 15%);
+}
+
+.node-card-header-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.node-card-header-text h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+  margin: 0;
+}
+
+.node-card-header-text p {
+  font-size: 0.625rem;
+  color: inherit;
+  margin: 0.125rem 0 0 0;
+}
+
+.node-card-body {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  padding: 0.25rem;
+}
+
+/* Dark mode text - White */
+[data-theme="dark"] .node-card,
+[data-theme="dark"] .node-card-header-text h3,
+[data-theme="dark"] .node-card-header-text p,
+[data-theme="dark"] .node-card-body label,
+[data-theme="dark"] .node-card-body span,
+[data-theme="dark"] .node-card-body p,
+[data-theme="dark"] .node-card-body div {
+  color: hsl(0, 0%, 100%);
+}
+
+/* Light mode text - Black */
+[data-theme="light"] .node-card,
+[data-theme="light"] .node-card-header-text h3,
+[data-theme="light"] .node-card-header-text p,
+[data-theme="light"] .node-card-body label,
+[data-theme="light"] .node-card-body span,
+[data-theme="light"] .node-card-body p,
+[data-theme="light"] .node-card-body div {
+  color: hsl(0, 0%, 15%);
+}
+
+/* Input/Textarea Styling - Dark Mode */
+[data-theme="dark"] .node-card-body input[type="text"],
+[data-theme="dark"] .node-card-body input[type="number"],
+[data-theme="dark"] .node-card-body textarea,
+[data-theme="dark"] .node-card-body select {
+  max-width: 100%;
+  padding: 0.625rem;
+  background-color: hsla(240, 15%, 15%, 0.8) !important;
+  border: 1.5px solid hsl(189, 92%, 58%) !important;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%) !important;
+  font-size: 0.75rem;
+  box-shadow: 2.5px 3px 0 hsla(189, 92%, 58%, 0.4) !important;
+  outline: none !important;
+  transition: ease 0.25s;
+}
+
+[data-theme="dark"] .node-card-body input[type="text"]:focus,
+[data-theme="dark"] .node-card-body input[type="number"]:focus,
+[data-theme="dark"] .node-card-body textarea:focus,
+[data-theme="dark"] .node-card-body select:focus {
+  border-color: hsl(189, 100%, 50%) !important;
+  box-shadow: 5.5px 7px 0 hsla(189, 92%, 58%, 0.6) !important;
+  transform: translateY(-2px);
+}
+
+/* Input/Textarea Styling - Light Mode */
+[data-theme="light"] .node-card-body input[type="text"],
+[data-theme="light"] .node-card-body input[type="number"],
+[data-theme="light"] .node-card-body textarea,
+[data-theme="light"] .node-card-body select {
+  max-width: 100%;
+  padding: 0.625rem;
+  background-color: hsla(0, 0%, 100%, 0.9) !important;
+  border: 1.5px solid hsl(189, 92%, 58%) !important;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 15%) !important;
+  font-size: 0.75rem;
+  box-shadow: 2.5px 3px 0 hsla(189, 92%, 58%, 0.3) !important;
+  outline: none !important;
+  transition: ease 0.25s;
+}
+
+[data-theme="light"] .node-card-body input[type="text"]:focus,
+[data-theme="light"] .node-card-body input[type="number"]:focus,
+[data-theme="light"] .node-card-body textarea:focus,
+[data-theme="light"] .node-card-body select:focus {
+  border-color: hsl(189, 100%, 40%) !important;
+  box-shadow: 5.5px 7px 0 hsla(189, 92%, 58%, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .node-card-body label {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+[data-theme="light"] .node-card-body label {
+  color: hsl(0, 0%, 15%);
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+/* Placeholder styling */
+[data-theme="dark"] .node-card-body input::placeholder,
+[data-theme="dark"] .node-card-body textarea::placeholder {
+  color: hsla(0, 0%, 83%, 0.5);
+}
+
+[data-theme="light"] .node-card-body input::placeholder,
+[data-theme="light"] .node-card-body textarea::placeholder {
+  color: hsla(0, 0%, 40%, 0.5);
+}
+
+/* Option styling for selects - Dark Mode */
+[data-theme="dark"] .node-card-body select option {
+  background-color: hsl(240, 15%, 9%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* Option styling for selects - Light Mode */
+[data-theme="light"] .node-card-body select option {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 15%);
+}
+
+/* Border dividers in dark mode - White */
+[data-theme="dark"] .node-card-body .border-t,
+[data-theme="dark"] .node-card-body .border-b {
+  border-color: hsl(0, 0%, 100%);
+}
+
+/* Border dividers in light mode - Black */
+[data-theme="light"] .node-card-body .border-t,
+[data-theme="light"] .node-card-body .border-b {
+  border-color: hsl(0, 0%, 15%);
+}
+
+
