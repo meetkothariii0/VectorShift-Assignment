@@ -88,10 +88,14 @@ export const SubmitButton = () => {
   const edgeCount = edges.length;
 
   const containerStyle = {
-    backgroundColor: isDark ? 'hsl(240, 13%, 13%)' : 'hsl(0, 0%, 96%)',
+    backgroundColor: isDark ? 'rgba(15, 23, 42, 0.85)' : 'rgba(248, 250, 252, 0.9)',
+    borderTop: isDark 
+      ? '1px solid rgba(255, 255, 255, 0.08)'
+      : '1px solid rgba(0, 0, 0, 0.06)',
     boxShadow: isDark
-      ? '0 -4px 16px rgba(255, 255, 255, 0.08)'
-      : '0 -4px 16px rgba(0, 0, 0, 0.08)',
+      ? '0 -12px 40px rgba(0, 0, 0, 0.2), 0 -4px 16px rgba(255, 255, 255, 0.08)'
+      : '0 -12px 40px rgba(0, 0, 0, 0.08), 0 -4px 16px rgba(0, 0, 0, 0.04)',
+    backdropFilter: 'blur(8px)',
   };
 
   const labelStyle = {

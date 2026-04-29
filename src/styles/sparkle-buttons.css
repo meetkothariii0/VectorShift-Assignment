@@ -21,25 +21,32 @@
   hsl(189 calc(var(--active) * 92%) calc((var(--active) * 44%) + 12%));
   background: var(--bg);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   border: 0;
   cursor: pointer;
   padding: 1.1em 0.5em;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.2em;
   white-space: nowrap;
   border-radius: 100px;
   position: relative;
-  box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsl(189 92% 58% / 0.75),
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 
+    0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsl(189 92% 58% / 0.75),
     0 0em 0 0 hsl(189 calc(var(--active) * 92%) calc((var(--active) * 50%) + 30%)) inset,
     0 -0.05em 0 0 hsl(189 calc(var(--active) * 92%) calc(var(--active) * 60%)) inset;
-  transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
+  transition: box-shadow 0.35s ease-out, scale 0.35s ease-out, background 0.35s ease-out, transform 0.25s ease;
   scale: calc(1 + (var(--active) * 0.1));
+}
+
+[data-theme="dark"] .sparkle-button:hover {
+  transform: translateY(-2px);
 }
 
 [data-theme="dark"] .sparkle-button:active {
   scale: 1;
+  transform: translateY(0);
 }
 
 /* Light Mode Sparkle Button */
@@ -58,25 +65,32 @@
   hsl(189 calc(var(--active) * 92%) calc((var(--active) * 40%) + 25%));
   background: var(--bg);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   border: 0;
   cursor: pointer;
   padding: 1.1em 0.5em;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.2em;
   white-space: nowrap;
   border-radius: 100px;
   position: relative;
-  box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsl(189 92% 58% / 0.6),
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 
+    0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsl(189 92% 58% / 0.6),
     0 0em 0 0 hsl(189 calc(var(--active) * 92%) calc((var(--active) * 50%) + 30%)) inset,
     0 -0.05em 0 0 hsl(189 calc(var(--active) * 92%) calc(var(--active) * 60%)) inset;
-  transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
+  transition: box-shadow 0.35s ease-out, scale 0.35s ease-out, background 0.35s ease-out, transform 0.25s ease;
   scale: calc(1 + (var(--active) * 0.1));
+}
+
+[data-theme="light"] .sparkle-button:hover {
+  transform: translateY(-2px);
 }
 
 [data-theme="light"] .sparkle-button:active {
   scale: 1;
+  transform: translateY(0);
 }
 
 /* Sparkle SVG Animation */

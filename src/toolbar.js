@@ -12,19 +12,19 @@ export const PipelineToolbar = () => {
   const { isDark } = useTheme();
 
   const toolbarStyle = {
-    backgroundColor: isDark ? 'rgba(15, 23, 42, 0.7)' : 'rgba(248, 250, 252, 0.7)',
+    backgroundColor: isDark ? 'rgba(15, 23, 42, 0.75)' : 'rgba(248, 250, 252, 0.8)',
     backgroundImage: isDark
-      ? 'linear-gradient(180deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.7))'
-      : 'linear-gradient(180deg, rgba(248, 250, 252, 0.8), rgba(226, 232, 240, 0.7))',
-    backdropFilter: 'blur(12px) saturate(180%)',
-    WebkitBackdropFilter: 'blur(12px) saturate(180%)',
+      ? 'linear-gradient(135deg, rgba(30, 41, 59, 0.65), rgba(15, 23, 42, 0.75))'
+      : 'linear-gradient(135deg, rgba(248, 250, 252, 0.85), rgba(241, 245, 249, 0.75))',
+    backdropFilter: 'blur(16px) saturate(190%)',
+    WebkitBackdropFilter: 'blur(16px) saturate(190%)',
     border: isDark 
-      ? '1px solid rgba(255, 255, 255, 0.15)' 
-      : '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: '12px',
+      ? '1px solid rgba(255, 255, 255, 0.12)' 
+      : '1px solid rgba(0, 0, 0, 0.08)',
+    borderRadius: '16px',
     boxShadow: isDark
-      ? '0 8px 32px rgba(59, 130, 246, 0.15), 0 4px 16px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-      : '0 8px 32px rgba(59, 130, 246, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
+      ? '0 12px 40px rgba(59, 130, 246, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
+      : '0 12px 40px rgba(59, 130, 246, 0.15), 0 6px 20px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
   };
 
   const headerTextStyle = {

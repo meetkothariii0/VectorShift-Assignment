@@ -25,21 +25,24 @@ function AppContent() {
     >
       {/* Header */}
       <div
-        className="px-4 py-2 flex items-center justify-between"
+        className="px-6 py-3.5 flex items-center justify-between transition-colors duration-300"
         style={{
           backgroundImage: isDark
-            ? 'linear-gradient(to right, #1e293b, #0f172a)'
-            : 'linear-gradient(to right, #e2e8f0, #cbd5e1)',
+            ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)'
+            : 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
           boxShadow: isDark
-            ? '0 4px 16px rgba(255, 255, 255, 0.08)'
-            : '0 4px 16px rgba(0, 0, 0, 0.08)',
+            ? '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(255, 255, 255, 0.08)'
+            : '0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)',
+          borderBottom: isDark
+            ? '1px solid rgba(255, 255, 255, 0.08)'
+            : '1px solid rgba(0, 0, 0, 0.06)',
         }}
       >
         <div>
-          <h1 className="text-lg font-bold" style={{ color: isDark ? '#fff' : '#1e293b' }}>
+          <h1 className="text-2xl font-bold tracking-tight" style={{ color: isDark ? '#fff' : '#0f172a' }}>
             🔗 Pipeline Builder
           </h1>
-          <p className="text-xs mt-0.5" style={{ color: isDark ? '#94a3b8' : '#475569' }}>
+          <p className="text-sm mt-1" style={{ color: isDark ? '#94a3b8' : '#64748b' }}>
             Build, visualize, and validate data pipelines
           </p>
         </div>
