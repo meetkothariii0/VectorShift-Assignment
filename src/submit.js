@@ -132,7 +132,7 @@ export const SubmitButton = () => {
         <button
           onClick={handleSubmit}
           disabled={isLoading}
-          className={`button button--primary ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
+          className={`uiverse-button ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
           style={{
             opacity: isLoading ? 0.75 : 1,
             cursor: isLoading ? 'not-allowed' : 'pointer',

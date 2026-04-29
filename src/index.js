@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './styles/buttons.css';
 import './styles/sparkle-buttons.css';
+import './styles/uiverse-buttons.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

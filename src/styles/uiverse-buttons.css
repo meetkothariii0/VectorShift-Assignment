@@ -1,0 +1,71 @@
+/* UIverse Button - From Uiverse.io by barisdogansutcu */
+/* Adapted for theme-aware styling */
+
+.uiverse-button {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  font-weight: 600;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .uiverse-button {
+  background-color: hsl(240, 13%, 20%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 8px;
+}
+
+[data-theme="dark"] .uiverse-button:hover {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+[data-theme="dark"] .uiverse-button:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+/* Light Mode */
+[data-theme="light"] .uiverse-button {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 20%);
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+}
+
+[data-theme="light"] .uiverse-button:hover {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+[data-theme="light"] .uiverse-button:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+/* Disabled State */
+.uiverse-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.uiverse-button:disabled:hover {
+  letter-spacing: 1.5px;
+  transform: none;
+}
