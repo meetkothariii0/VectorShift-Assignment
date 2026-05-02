@@ -36,8 +36,8 @@ export const SubmitButton = () => {
       setModalState({
         isOpen: true,
         type: 'warning',
-        title: 'Empty Pipeline',
-        message: 'Please add nodes to your pipeline before submitting.',
+        title: 'Whoops, no nodes yet',
+        message: 'Drag some nodes onto the canvas to build your pipeline.',
       });
       return;
     }
@@ -50,8 +50,8 @@ export const SubmitButton = () => {
       setModalState({
         isOpen: true,
         type: 'warning',
-        title: 'Missing Nodes',
-        message: 'Your pipeline must have at least one Input and one Output node.',
+        title: 'Need start and end',
+        message: 'Add at least one Input node and one Output node to define where data flows in and out.',
       });
       return;
     }
@@ -66,8 +66,8 @@ export const SubmitButton = () => {
       setModalState({
         isOpen: true,
         type: 'success',
-        title: 'Pipeline Valid! ✨',
-        message: `Your pipeline has been validated successfully.`,
+        title: 'Looking good! ✨',
+        message: `Your pipeline is set up perfectly. All nodes are connected and ready to go.`,
         details: result,
       });
     } catch (error) {
@@ -75,8 +75,8 @@ export const SubmitButton = () => {
       setModalState({
         isOpen: true,
         type: 'error',
-        title: 'Validation Failed',
-        message: error.message || 'An error occurred while validating the pipeline.',
+        title: 'Oops, something went wrong',
+        message: error.message || 'Could not validate your pipeline. Check your connections and try again.',
         details: error.response?.data,
       });
     } finally {

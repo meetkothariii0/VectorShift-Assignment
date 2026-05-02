@@ -123,9 +123,9 @@ export const Modal = ({
         >
           <button
             onClick={onClose}
-            className="button button--compact"
+            className="uiverse-button"
           >
-            Close
+            Got it
           </button>
 
           {actions.map((action, idx) => (
