@@ -66,7 +66,7 @@ export const SubmitButton = () => {
       setModalState({
         isOpen: true,
         type: 'success',
-        title: 'Looking good! ✨',
+        title: 'All set! 🚀',
         message: `Your pipeline is set up perfectly. All nodes are connected and ready to go.`,
         details: result,
       });

@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# VectorShift Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A visual pipeline builder for creating and validating data processing workflows.
 
-## Available Scripts
+## 🚀 Live Demo
 
-In the project directory, you can run:
+Check out the live application: **[https://vector-shift-assignment-ioja.vercel.app/](https://vector-shift-assignment-ioja.vercel.app/)**
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Visual Pipeline Builder**: Drag and drop nodes to create data processing pipelines
+- **Dark/Light Mode**: Toggle between dark and light themes for comfortable viewing
+- **Node Types**: Input, Output, Text, and LLM nodes for building complex workflows
+- **Validation**: Real-time validation of pipeline structure and connectivity
+- **Cycle Detection**: Automatic detection of invalid circular pipelines
+- **Topological Sorting**: Ensures proper execution order of nodes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+### Frontend
+- React with Create React App
+- React Flow for pipeline visualization
+- Zustand for state management
+- Tailwind CSS for styling
+- Axios for API communication
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- FastAPI with Uvicorn
+- Pydantic for data validation
+- NetworkX for graph algorithms
 
-### `npm run build`
+## 📦 Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (v14+)
+- Python (v3.8+)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd frontend-20260428T104427Z-3-001/frontend
+npm install
+npm start
+```
 
-### `npm run eject`
+The app will run on [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd backend-20260428T104309Z-3-001/backend
+pip install fastapi uvicorn pydantic networkx
+python -m uvicorn main:app --reload
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The backend API will run on [http://localhost:8000](http://localhost:8000)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🎨 UI Components
 
-## Learn More
+- **Toolbar**: Draggable node palette with glassmorphic design
+- **Canvas**: React Flow canvas for pipeline visualization
+- **Modal**: Success/error dialogs with humanized messages
+- **Theme Toggle**: Switch between dark and light modes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔗 API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### POST `/api/pipeline/validate`
+Validates a pipeline configuration.
 
-### Code Splitting
+**Request Body:**
+```json
+{
+  "nodes": [...],
+  "edges": [...]
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Response:**
+```json
+{
+  "valid": true,
+  "sorted_nodes": [...],
+  "message": "Pipeline is valid"
+}
+```
 
-### Analyzing the Bundle Size
+## 🚢 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The app is deployed on **Vercel** with automatic deployments on push to main branch.
 
-### Making a Progressive Web App
+**Deploy Settings:**
+- Build Command: `npm run build`
+- Output Directory: `build`
+- SPA Fallback: Routes to `/index.html`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📝 License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is part of the VectorShift Assignment.
