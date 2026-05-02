@@ -56,7 +56,6 @@ export const BaseNode = ({
     content = null,
     width = 280,
     height = 240,
-    color = 'slate',
     icon = null,
     autoHeight = false,
   } = nodeConfig;

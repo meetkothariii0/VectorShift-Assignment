@@ -120,7 +120,6 @@ export const PipelineUI = () => {
     event.dataTransfer.dropEffect = 'move';
   }, []);
 
-  const backgroundColor = isDark ? '#0f172a' : '#f8fafc';
   const gridColor = isDark ? '#1e293b' : '#e1e1e1';
   const gridMainBg = isDark ? '#0f172a' : '#f3f3f3';
   const borderColor = isDark ? 'hsl(240, 9%, 17%)' : 'hsl(0, 0%, 85%)';
